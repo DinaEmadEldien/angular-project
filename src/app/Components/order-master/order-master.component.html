@@ -1,0 +1,51 @@
+<h1>Make new order</h1>
+
+<div class="mb-3">
+  <label for="" class="form-label"></label>
+  <select class="form-control"  name="category" id="cat" [(ngModel)]="selectedCatID" >
+    <!-- <option value="0">Select Category </option> -->
+    <option value="0" disabled selected hidden>Select Category</option>
+    <option *ngFor="let cat of categoryList" [value]="cat.id">{{cat.name}}</option>
+  </select>
+</div>
+
+<!-- <div class="bg-danger">
+  <h3>[For Test , To be removed] selescted category in parent : {{selectedCatID}}</h3>
+</div> -->
+
+
+<div style="background-color: rgb(230, 227, 227);">
+<!-- <app-product-for-cart [recievedSelectedCatID]="selectedCatID" (onTotalPriceChanged)="updateTotalPrice($event)"></app-product-for-cart> -->
+<app-product-for-cart [recievedSelectedCatID]="selectedCatID" (onAddedToCart)="addToCart($event)"></app-product-for-cart>
+
+</div>
+
+
+<!-- <h2>Order Total Price : {{recievedOrderTotalPrice | currency}}</h2> -->
+
+<!-- <h2>Cart</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">Totalprice</th>
+      <th scope="col">quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <ng-container  *ngFor="let item of cart" >
+      <tr>
+        <td>{{item.productID}}</td>
+        <td>{{item.productName}}</td>
+        <td>{{item.totalPrice}}</td>
+        <td>{{item.selectedQuantity}}</td>
+
+
+
+      </tr>
+    </ng-container>
+  </tbody>
+</table> -->
+

@@ -1,0 +1,82 @@
+<!-- <a name="" id="" class="btn btn-dark m-2" href="#" [routerLink]="['/NewProduct']" role="button">Add Product</a><br>
+<a name="" id="" class="btn btn-dark m-2" href="#" [routerLink]="['/NewCategory']" role="button">Add Category</a>
+ -->
+
+
+<!-- <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">price</th>
+      <th scope="col">img</th>
+      <th scope="col">quantity</th>
+      <th scope="col">Details</th>
+      <th scope="col">items count</th>
+      <th scope="col">Add To Cart</th>
+      <th scope="col">Buy</th>
+
+    </tr>
+  </thead>
+  <tbody> -->
+
+    <!-- <ng-container  *ngFor="let item of ProductList" > -->
+    <!-- <ng-container  *ngFor="let item of prdListOfCat" >
+      <tr>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.price | currency}}</td>
+        <td><img [src]="item.Img" width="200px"></td>
+
+        <td>
+          <ng-container [ngSwitch]="item.Quantity">
+            <div *ngSwitchCase="0">Out of Stock</div>
+            <div *ngSwitchCase="1">Last Item</div>
+            <div *ngSwitchCase="2">Last 2 items</div>
+            <div *ngSwitchDefault>{{item.Quantity}}</div>
+          </ng-container>
+        </td> -->
+
+        <!-- <td><button type="button" class="btn btn-dark" (click)="openProductDetails(item.id)">Details</button></td> -->
+        <!-- <td><a name="" id="" class="btn btn-success" role="button" [routerLink]="['/Products',item.id]">Details</a></td>
+        <a name="" id="" class="btn btn-dark m-2" href="#" [routerLink]="['/EditProduct',item.id]" role="button">Update Product</a><br>
+
+
+        <td><input #itemsCount type="number" class="form-control"></td> -->
+
+        <!-- <td><button type="button" class="btn btn-danger" (click)="updateOrderTotalPrice(+itemsCount.value,item.price)">Add To Cart</button></td> -->
+        <!-- <td><button type="button" class="btn btn-danger" (click)="updateAddToCartTable(item.id,item.name,item.price,+itemsCount.value)">Add To Cart</button></td>
+
+        <td><button type="button" class="btn btn-dark" (click)="DecreaseQuantity(item)">Buy</button></td>
+
+      </tr>
+    </ng-container>
+  </tbody>
+</table> -->
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="card col-3 m-3" style="width: 18rem;"  *ngFor="let item of prdListOfCat,index as i">
+      <div class="card-body" >
+        <!-- <img ProductCard  [src]="item.Img"> -->
+        <img src="http://localhost:9964/Resources/Images/{{item.img}}">
+        <h3>{{item.name}}</h3>
+        <h4>Price: {{item.price|currency}}</h4>
+        <h4>Quantity: </h4> <input #itemsCount type="number" class="form-control"><br>
+
+        <a href="#" class="btn btn-secondary" (click)="addToCart(i)">add To Cart</a>
+      </div>
+    </div>
+
+
+
+
+<!-- <div class="bg-danger">
+  <h3>[For Test] To be removed:
+    <br>
+    Total price in nested component: {{orderTotalPrice}}
+  </h3>
+</div> -->

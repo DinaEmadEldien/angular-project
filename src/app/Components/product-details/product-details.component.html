@@ -1,0 +1,17 @@
+<div class="card" style="width: 25rem;">
+  <div class="card-body" >
+    <img ProductCard  [src]="currentProduct?.img">
+    <h3>{{currentProduct?.name}}</h3>
+    <h4>Price: {{currentProduct?.price|currency}}</h4>
+    <h4>Quantity: {{currentProduct?.quantity}}</h4>
+
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button type="button" class="btn btn-dark" [disabled]="isFirstItem()" (click)="pevProduct()">Prev</button>
+      <button type="button" class="btn btn-danger" (click)="goback()">Back</button>
+      <button type="button" class="btn btn-dark" [disabled]="isLastItem()" (click)="nextProduct()">Next</button>
+    </div>
+
+
+
+  </div>
+</div>

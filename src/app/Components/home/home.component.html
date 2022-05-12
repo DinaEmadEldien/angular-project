@@ -1,0 +1,65 @@
+<div class="row" style="margin: 7%;">
+  <div class="col-lg-6">
+      <h2>Great Companies are <br>built on great Products</h2><br>
+      <p style="color: gray;">Ignite the most powerfull growth engine you have ever <br>built for your company</p><br>
+      <!-- <button type="button" class="btn btn-outline-primary">More Info</button>
+      <button type="button" class="btn btn-dark"><i class="far fa-play-circle"></i> Watch Video</button> -->
+  </div>
+  <div class="col-lg-6">
+      <img src="assets/bg_image_1.png">
+  </div>
+</div>
+
+<div class="row" style="margin: 7%;">
+  <div class="col-lg-4">
+      <img src="assets/icon_pattern.svg">
+      <strong>Provide financial advice by our advisor</strong>
+      <p style="color: gray;">Copywrite, blogpublic realations <br>content translation.</p>
+
+  </div>
+  <div class="col-lg-4">
+      <img src="assets/icon_pattern.svg">
+      <strong>Solutions for global organisations</strong>
+      <p style="color: gray;">Copywrite, blogpublic realations <br>content translation.</p>
+  </div>
+  <div class="col-lg-4">
+      <img src="assets/icon_pattern.svg">
+      <strong>Provide financial advice by our advisor</strong>
+      <p style="color: gray;">Copywrite, blogpublic realations <br>content translation.</p>
+  </div>
+</div>
+
+<h2 style="text-align: center;">Products</h2>
+<div class="row" style="margin: 7%;">
+  <div class="card col-3 m-5" style="width: 18rem;"  *ngFor="let item of prdList">
+    <div class="card-body" >
+      <!-- <img ProductCard  [src]="item.Img"> -->
+      <img src="http://localhost:9964/Resources/Images/{{item.img}}">
+      <h3>{{item.name}}</h3>
+      <h4>Price: {{item.price|currency}}</h4>
+    </div>
+  </div>
+
+
+<div class="row" style="margin: 7%;">
+  <div class="col-lg-6">
+      <img src="assets/bg_image_3.png">
+  </div>
+  <div class="col-lg-6">
+      <h2>We're<span style="color: blue;"> Dynamic</span> Team of <br>Creatives People</h2><br>
+      <p style="color: gray;">We provide marketing services to startups & small business to looking for partner for their digital media, design & dev lead generation & communication.</p>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

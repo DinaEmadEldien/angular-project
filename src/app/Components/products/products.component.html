@@ -1,0 +1,113 @@
+<h1>{{myStore.name}}</h1>
+<img [src]="myStore.logo">
+
+
+<!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li *ngFor="let item of categoryList" class="dropdown-item">
+      {{item.name}}
+    </li>
+  </ul>
+</div> -->
+
+<br><br>
+<!-- <select class="select-option" #myselect (change)="onOptionsSelected(myselect.value)" class="btn btn-danger dropdown-toggle">
+  <option class="option" *ngFor="let option of categoryList" [value]="option.id">{{option.name}}</option>
+
+</select> -->
+
+<div class="mb-3">
+  <label for="" class="form-label">Client</label>
+  <input type="text" #Client class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+  <small id="helpId" class="form-text text-muted">Help text</small>
+</div>
+
+
+
+<h3>Time Now {{TodayDate|date:"mediumTime"}}</h3>
+
+<select class="form-select" aria-label="Default select example" #show (change)="showproduct(show.value)" >
+  <option selected value="0">Open this select menu</option>
+  <option *ngFor="let item of categoryList" [value]="item.id">
+      {{item.name}}
+  </option>
+
+</select>
+
+<br>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">price</th>
+      <th scope="col">img</th>
+      <th scope="col">quantity</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr *ngFor="let item of newlist" [style.background-color]="(item.Quantity==0)? 'lightyellow':'lightgray'"> -->
+    <!-- <tr  *ngFor="let item of newlist" [class.bg-warning]="item.Quantity==1" [hidden]="item.Quantity==0"> -->
+
+    <ng-container  *ngFor="let item of newlist" >
+      <tr *ngIf="item.quantity!=0" [class.bg-warning]="item.quantity==1">  <!--class bind-->
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.price | currency:"EGP"}}</td>
+        <td><img ProductCard  [src]="item.img"></td>
+
+        <!-- <td>{{item.Quantity}}</td> -->         
+
+        <td>
+          <ng-container [ngSwitch]="item.quantity">
+            <div *ngSwitchCase="0">Out of Stock</div>
+            <div *ngSwitchCase="1">Last Item</div>
+            <div *ngSwitchCase="2">Last 2 items</div>
+            <div *ngSwitchDefault>{{item.quantity}}</div>
+          </ng-container>
+        </td>
+
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+
+<div class="container">
+  <div class="row">
+    <div class="card col-3" style="width: 18rem;"  *ngFor="let item of newlist">
+      <div class="card-body" >
+        <img ProductCard  [src]="item.img">
+        <h3>{{item.name}}</h3>
+        <h4>Price: {{item.price|currency}}</h4>
+
+        <a href="#" class="btn btn-secondary">add To Cart</a>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+
+
+<!-- <h2>Categories:</h2>
+  <ul>
+    <li *ngFor="let item of categoryList">
+      {{item.name}}
+    </li>
+  </ul> -->
+
+  <input class="form-control " style="width: 920px;" id="cname" [(ngModel)]="ClientName">
+  <label for="cname">Client Name</label>
+
+  <h4>Thanks for purchasing from our Store : <span style="color:rgb(221, 218, 42);">{{ClientName}} </span> </h4>
